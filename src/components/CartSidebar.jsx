@@ -79,8 +79,8 @@ export default function CartSidebar({
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="flex-1">
-                            <div className="overflow-y-auto p-5 space-y-5">
+                            className="flex flex-col flex-1 min-h-0">
+                            <div className="flex-1 min-h-0 overflow-y-auto p-5 space-y-5">
                                 {cart.map((item) => (
                                     <motion.div
                                         key={item.id}
@@ -151,7 +151,7 @@ export default function CartSidebar({
                                 ))}
                             </div>
 
-                            <div className="border-t-[5px] border-black p-6 bg-[#e9e8dd]">
+                            <div className="shrink-0 border-t-[5px] border-black p-6 bg-[#e9e8dd]">
                                 <div className="flex justify-between mb-5">
                                     <span className="text-xl font-bold text-[#5B5D30]">
                                         Total

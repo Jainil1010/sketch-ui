@@ -116,18 +116,6 @@ export default function Hero() {
                     )}
                 </motion.div>
             </div>
-
-            <style jsx>{`
-                .mask-image-gradient {
-                    mask-image: linear-gradient(
-                        to bottom,
-                        transparent,
-                        black 15%,
-                        black 85%,
-                        transparent
-                    );
-                }
-            `}</style>
         </section>
     );
 }

@@ -6,6 +6,7 @@ import { products } from "./data/products";
 import CartSidebar from "./components/CartSidebar";
 import { AnimatePresence } from "framer-motion";
 import ProductModal from "./components/ProductModal";
+import CTA from "./components/CTA";
 
 export default function App() {
     const [cart, setCart] = useState([]);
@@ -147,6 +148,8 @@ export default function App() {
                         addToCart={addToCart}
                         openProduct={setSelectedProduct}
                     />
+
+                    <CTA />
 
                     <AnimatePresence>
                         {selectedProduct && (

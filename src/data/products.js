@@ -11,7 +11,7 @@ export const products = [
         image: test1,
         description:
             "Handmade pixel warrior keychain crafted for gaming enthusiasts.",
-        featured: true,
+        details: ['Handmade by artisans', 'Premium quality materials', 'Gaming inspired design', 'Perfect collector gift']
     },
     {
         id: 2,

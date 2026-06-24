@@ -7,6 +7,8 @@ import CartSidebar from "./components/CartSidebar";
 import { AnimatePresence } from "framer-motion";
 import ProductModal from "./components/ProductModal";
 import CTA from "./components/CTA";
+import Footer from "./components/Footer";
+import ContactUs from "./components/ContactUs";
 
 export default function App() {
     const [cart, setCart] = useState([]);
@@ -150,6 +152,10 @@ export default function App() {
                     />
 
                     <CTA />
+
+                    <ContactUs />
+
+                    <Footer />
 
                     <AnimatePresence>
                         {selectedProduct && (

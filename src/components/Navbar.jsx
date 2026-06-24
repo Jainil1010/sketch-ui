@@ -14,9 +14,7 @@ export default function Navbar({ cartCount, openCart }) {
 
     const navLinks = [
         "Home",
-        "Collections",
         "Best Sellers",
-        "Reviews",
         "Contact",
     ];
 

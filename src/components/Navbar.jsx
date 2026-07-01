@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
-export default function Navbar({ cartCount, openCart }) {
+export default function Navbar({ cartCount, openCart, setProduct }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -31,6 +31,10 @@ export default function Navbar({ cartCount, openCart }) {
         closed: { x: -20, opacity: 0 },
         open: { x: 0, opacity: 1 },
     };
+
+    const handleClick = () => {
+        setProduct(null)
+    }
 
     return (
         <motion.header
@@ -68,7 +72,7 @@ export default function Navbar({ cartCount, openCart }) {
                             <motion.button
                                 key={item}
                                 whileTap={{ scale: 0.98 }}
-                                onClick={openCart}
+                                onClick={handleClick}
                                 className="
                                     relative px-5 py-3 
                                     bg-[#7D8453] text-white 

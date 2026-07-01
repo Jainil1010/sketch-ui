@@ -1,4 +1,4 @@
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import test1 from "../assets/test1.png";
 import test2 from "../assets/test2.png";
 import test3 from "../assets/test3.png";

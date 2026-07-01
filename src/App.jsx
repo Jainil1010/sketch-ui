@@ -9,6 +9,7 @@ import ProductModal from "./components/ProductModal";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ContactUs from "./components/ContactUs";
+import ProductPage from "./pages/Product";
 
 export default function App() {
     const [cart, setCart] = useState([]);
@@ -130,11 +131,16 @@ export default function App() {
                 <Navbar
                     cartCount={totalItems}
                     openCart={() => setCartOpen(true)}
+                    setProduct={setSelectedProduct}
                 />
 
                 <main className="container mx-auto">
-                    <Hero />
-                    {/* <div className="bg-white border-4 border-black rounded-4xl p-8 shadow-[8px_8px_0px_#000] max-w-4xl mx-auto">
+                    {selectedProduct ? (
+                        <ProductPage product={selectedProduct} />
+                    ) : (
+                        <>
+                            <Hero />
+                            {/* <div className="bg-white border-4 border-black rounded-4xl p-8 shadow-[8px_8px_0px_#000] max-w-4xl mx-auto">
                         <h2 className="text-4xl font-black mb-4 uppercase">
                             Welcome to the Shop
                         </h2>
@@ -145,19 +151,21 @@ export default function App() {
                         </p>
                     </div> */}
 
-                    <ProductGrid
-                        products={products}
-                        addToCart={addToCart}
-                        openProduct={setSelectedProduct}
-                    />
+                            <ProductGrid
+                                products={products}
+                                addToCart={addToCart}
+                                openProduct={setSelectedProduct}
+                            />
 
-                    <CTA />
+                            <CTA />
 
-                    <ContactUs />
+                            <ContactUs />
+                        </>
+                    )}
+                </main>
+                <Footer />
 
-                    <Footer />
-
-                    <AnimatePresence>
+                {/* <AnimatePresence>
                         {selectedProduct && (
                             <ProductModal
                                 product={selectedProduct}
@@ -165,21 +173,20 @@ export default function App() {
                                 addToCart={addToCart}
                             />
                         )}
-                    </AnimatePresence>
+                    </AnimatePresence> */}
 
-                    <AnimatePresence>
-                        {cartOpen && (
-                            <CartSidebar
-                                cart={cart}
-                                total={cartTotal}
-                                close={() => setCartOpen(false)}
-                                removeItem={removeFromCart}
-                                increaseQty={increaseQty}
-                                decreaseQty={decreaseQty}
-                            />
-                        )}
-                    </AnimatePresence>
-                </main>
+                <AnimatePresence>
+                    {cartOpen && (
+                        <CartSidebar
+                            cart={cart}
+                            total={cartTotal}
+                            close={() => setCartOpen(false)}
+                            removeItem={removeFromCart}
+                            increaseQty={increaseQty}
+                            decreaseQty={decreaseQty}
+                        />
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );
